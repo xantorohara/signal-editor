@@ -4,6 +4,10 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
 
         const SCALE = 10;
         const HEIGHT = 3;
+        const RED = '#FF3333';
+        const GREEN = '#33CC33';
+        const BLUE = '#3399FF';
+
         $scope.lines = [];
 
         var locationHash;
@@ -35,20 +39,27 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
             $scope.lines = [
                 {
                     name: 'SDA',
-                    input: '4 4 4 4 4 4 8 16 100',
-                    color: '#32CD32',
+                    input: '4 4 4 4 4 4 8 16 1000',
+                    color: GREEN,
                     height: HEIGHT,
                     xOffset: 1,
                     yOffset: 1
-
                 },
                 {
                     name: 'SCL',
-                    input: '6 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 100',
-                    color: '#1E90FF',
+                    input: '6 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 1000',
+                    color: BLUE,
                     height: HEIGHT,
                     xOffset: 1,
                     yOffset: HEIGHT + 2
+                },
+                {
+                    name: 'Demo',
+                    input: '1000',
+                    color: RED,
+                    height: HEIGHT,
+                    xOffset: 1,
+                    yOffset: 2 * (HEIGHT + 2)
                 }
             ];
         }
@@ -94,7 +105,7 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
             var line = {
                 name: 'New ' + ++newCount,
                 input: '5 1 1',
-                color: '#1E90FF',
+                color: BLUE,
                 height: HEIGHT,
                 xOffset: 1,
                 yOffset: 1 + (HEIGHT + 1) * $scope.lines.length
@@ -127,6 +138,7 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
         $scope.$on('$locationChangeSuccess', function () {
             //handle browser's history events but prevent internal changes
             if ($location.hash() != locationHash) {
+                locationHash = $location.hash();
                 $log.info('Restore lines from the history');
                 refreshLines()
             }

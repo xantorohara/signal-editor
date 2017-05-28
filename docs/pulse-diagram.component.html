@@ -50,7 +50,7 @@
             <td><input type="text" ng-model="line.input" ng-change="lineChanged(line)"></td>
             <td><input type="number" ng-model="line.xOffset" ng-change="lineChanged(line)"></td>
             <td><input type="number" ng-model="line.yOffset" ng-change="lineChanged(line)"></td>
-            <td><input type="number" ng-model="line.height" ng-change="lineChanged(line)"></td>
+            <td><input type="number" min="0" ng-model="line.height" ng-change="lineChanged(line)"></td>
             <td>
                 <button class="remove-button" ng-click="removeLine($index)" title="Remove line">
                     <i class="fa fa-times" aria-hidden="true"></i>
