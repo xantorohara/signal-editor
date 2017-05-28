@@ -7,6 +7,7 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
         $scope.lines = [];
 
         var locationHash;
+        var newCount = 0;
 
         function encodeLines(lines) {
             return lines.map(function (v) {
@@ -91,8 +92,8 @@ angular.module('pulseEditorApp').component('pulseDiagram', {
 
         $scope.addLine = function () {
             var line = {
-                name: 'New',
-                input: '3 1 1',
+                name: 'New ' + ++newCount,
+                input: '5 1 1',
                 color: '#1E90FF',
                 height: HEIGHT,
                 xOffset: 1,

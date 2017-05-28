@@ -1,23 +1,83 @@
-pulse-diagram  {
+pulse-diagram {
     display: block;
 }
+
 pulse-diagram svg {
     height: 200px;
 }
 
-pulse-diagram.theme-dark {
-    background-color: black;
-    color: white;
+
+pulse-diagram th {
+    text-align: left;
+    padding: 10px;
 }
 
-pulse-diagram input[ng-model="line.name"],
+
+pulse-diagram input[ng-model="line.name"] {
+    width: 100px;
+
+}
+
 pulse-diagram input[ng-model="line.xOffset"],
 pulse-diagram input[ng-model="line.yOffset"],
 pulse-diagram input[ng-model="line.height"] {
-    border-radius: 5px;
     width: 50px;
 }
 
 pulse-diagram input[ng-model="line.input"] {
     width: 400px;
+}
+
+pulse-diagram input[type="text"],
+pulse-diagram input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+}
+
+pulse-diagram input[type="text"]:focus,
+pulse-diagram input[type="number"]:focus {
+    outline: none;
+    border-bottom: solid 2px #969696;
+}
+
+pulse-diagram button {
+    padding: 5px;
+    border: none;
+    transition: .2s;
+    font-size: 100%;
+    line-height: 1;
+    margin: 5px;
+    outline: none;
+}
+
+pulse-diagram button.remove-button {
+    /*background-color: #FE5F55;*/
+}
+
+pulse-diagram button.remove-button:hover {
+    background-color: #E5463C;
+    color: white;
+}
+
+pulse-diagram button.remove-button:active,
+pulse-diagram button.remove-button:focus {
+    background-color: #B21309;
+    color: white;
+}
+
+pulse-diagram button.add-button {
+    background-color: #139675;
+    color: white;
+}
+
+pulse-diagram button.add-button:hover {
+    background-color: #007D5C;
+    color: white;
+}
+
+pulse-diagram button.add-button:active,
+pulse-diagram button.add-button:focus {
+    background-color: #004A29;
 }
