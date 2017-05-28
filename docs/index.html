@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="pulseEditorApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Pulse Diagram Editor</title>
+
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        pulse-diagram {
+            display: block;
+        }
+
+        pulse-diagram svg {
+            height: 200px;
+        }
+
+        pulse-diagram input[ng-model="line.name"],
+        pulse-diagram input[ng-model="line.xOffset"],
+        pulse-diagram input[ng-model="line.yOffset"],
+        pulse-diagram input[ng-model="line.height"] {
+            width: 100px;
+        }
+
+        pulse-diagram input[ng-model="line.input"] {
+            width: 400px;
+        }
+
+
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <script>
+        angular.module('pulseEditorApp', []);
+    </script>
+    <script src="pulse-diagram.component.js"></script>
+</head>
+<body>
+
+<h2>I2C Pulse Diagram</h2>
+<pulse-diagram></pulse-diagram>
+
+</body>
+</html>
