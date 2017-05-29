@@ -43,7 +43,7 @@ pulse-diagram input[type="number"]:focus {
 }
 
 pulse-diagram button {
-    padding: 5px;
+    padding: 10px;
     border: none;
     transition: .2s;
     font-size: 100%;
