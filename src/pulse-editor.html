@@ -1,0 +1,50 @@
+
+
+<div resizable r-directions="['right', 'left', 'bottom']" r-centered-x="true">
+    <pulse-diagram class="inner" lines="$ctrl.lines" api="$ctrl.diagramApi"></pulse-diagram>
+</div>
+
+<div>
+    <table class="controls">
+        <tr>
+            <th class="input-name">Line name</th>
+            <th class="input-color">Color</th>
+            <th class="input-path">Pulse sequence</th>
+            <th class="input-number">X</th>
+            <th class="input-number">Y</th>
+            <th class="input-number">Height</th>
+            <th class="remove-button"></th>
+        </tr>
+        <tr ng-repeat="line in $ctrl.lines">
+            <td class="input-name">
+                <input type="text" ng-model="line.name" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="input-color">
+                <input type="color" ng-model="line.color" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="input-path">
+                <input type="text" ng-model="line.input" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="input-number">
+                <input type="number" ng-model="line.xOffset" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="input-number">
+                <input type="number" ng-model="line.yOffset" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="input-number">
+                <input type="number" min="0" ng-model="line.height" ng-change="$ctrl.lineChanged($index)">
+            </td>
+            <td class="remove-button">
+                <button class="remove-button" ng-click="$ctrl.removeLine($index)" title="Remove line">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: center">
+        <button class="create-button" ng-click="$ctrl.createLine()" title="Create new line">
+            <i class="fa fa-plus"></i> Create new line
+        </button>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+pulse-diagram {
+    display: block;
+}
+
+pulse-diagram svg {
+    width: 100%;
+    height: 100%;
+}
+
+pulse-diagram svg {
+    border-right: solid 1px #dadada;
+    border-bottom: solid 1px #dadada;
+}

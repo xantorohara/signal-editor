@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pulseApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Pulse Diagram Demo</title>
+    <style>
+        pulse-editor {
+            display: block;
+        }
+
+        pulse-diagrams {
+            display: block;
+        }
+    </style>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <script src="lib/base64js.min.js"></script>
+    <script src="lib/pako.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+
+    <link href="src/pulse-editor.css" rel="stylesheet">
+
+    <script src="src/pulse-app.js"></script>
+    <script src="src/pulse-editor.js"></script>
+    <script src="src/pulse-diagram.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<pulse-editor></pulse-editor>
+
+<div ng-controller="DiagramDemoCtrl as ctrl">
+    <b>Diagram</b><br>
+    <pulse-diagram style="width: 200px; height: 200px;" lines="ctrl.lines"></pulse-diagram>
+</div>
+
+</body>
+</html>
