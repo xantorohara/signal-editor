@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Pulse Diagram Demo</title>
-    <style>
-        pulse-editor {
-            display: block;
-        }
-
-        pulse-diagrams {
-            display: block;
-        }
-    </style>
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -22,8 +13,45 @@
 
     <link href="src/pulse-editor.css" rel="stylesheet">
 
-    <script src="src/pulse-app.js"></script>
-    <script src="src/pulse-editor.js"></script>
+    <script>
+        angular.module('pulseApp', []).controller('DiagramDemoCtrl', function DiagramDemoCtrl($interval, $log) {
+            var vm = this;
+            vm.lines = [
+                {
+                    name: 'SDA',
+                    // input: '4 4 4 4 4 4 8 16 1000',
+                    input: '1',
+                    color: '#33CC33',
+                    height: 3,
+                    xOffset: 1,
+                    yOffset: 1
+                },
+                {
+                    name: 'SCL',
+                    input: '6 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 1000',
+                    color: '#3399FF',
+                    height: 3,
+                    xOffset: 1,
+                    yOffset: 5
+                },
+                {
+                    name: 'Demo',
+                    input: '1000',
+                    color: '#FF3333',
+                    height: 3,
+                    xOffset: 1,
+                    yOffset: 10
+                }
+            ];
+
+            // vm.test
+            $interval(function () {
+                // $log.info(new Date());
+                vm.lines[0].name = new Date();
+                vm.lines[0].input += ' 1';
+            }, 1000);
+        });
+    </script>
     <script src="src/pulse-diagram.js"></script>
     <style>
 
