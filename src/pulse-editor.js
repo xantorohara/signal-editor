@@ -6,7 +6,6 @@ angular.module('pulseApp').component('pulseEditor', {
         const HEIGHT = 3;
         const COLORS = ['#FF3333', '#33CC33', '#3399FF', '#333333'];
 
-
         vm.lines = [];
         vm.diagramApi = null;
         var locationHash;
