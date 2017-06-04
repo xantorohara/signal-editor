@@ -2,7 +2,8 @@ angular.module('pulseApp').component('pulseDiagram', {
     templateUrl: 'src/pulse-diagram.html',
     bindings: {
         lines: '<',
-        api: '=?'
+        api: '=?',
+        standalone: '<?'
     },
 
     controller: function ($log) {
@@ -49,8 +50,8 @@ angular.module('pulseApp').component('pulseDiagram', {
                 name: line.name,
                 color: line.color,
                 path: out.join(' '),
-                top: line.yOffset * SCALE,
-                left: line.xOffset * SCALE,
+                top: line.top * SCALE,
+                left: line.left * SCALE,
                 textTop: (line.height / 2) * SCALE
             }
         }

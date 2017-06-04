@@ -12,13 +12,13 @@ angular.module('pulseApp').component('pulseEditor', {
 
         function encodeLines(lines) {
             return _.map(lines, function (v) {
-                return {n: v.name, i: v.input, c: v.color, h: v.height, x: v.xOffset, y: v.yOffset};
+                return {n: v.name, i: v.input, c: v.color, h: v.height, x: v.left, y: v.top};
             });
         }
 
         function decodeLines(lines) {
             return _.map(lines, function (v) {
-                return {name: v.n, input: v.i, color: v.c, height: v.h, xOffset: v.x, yOffset: v.y};
+                return {name: v.n, input: v.i, color: v.c, height: v.h, left: v.x, top: v.y};
             });
         }
 
@@ -59,8 +59,8 @@ angular.module('pulseApp').component('pulseEditor', {
                 input: '5 1 1',
                 color: getRandomColor(),
                 height: HEIGHT,
-                xOffset: 1,
-                yOffset: 1 + (HEIGHT + 1) * vm.lines.length
+                left: 1,
+                top: 1 + (HEIGHT + 1) * vm.lines.length
             };
         }
 
